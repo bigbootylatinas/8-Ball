@@ -1,3 +1,5 @@
+-- This is for loading the GUI
+
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
@@ -5,6 +7,7 @@ local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local HTTPService = game:GetService("HttpService")
+
 
 local Library = {
 	Themes = {
@@ -814,7 +817,7 @@ function Library:create(options)
 		Position = UDim2.new(1, -44, 1, -10),
 		AnchorPoint = Vector2.new(1, 1),
 		Image = "http://www.roblox.com/asset/?id=8577523456"
-	}):tooltip("credits")
+	}):tooltip("trainer-tools")
 
 	local quickAccess = homePage:object("Frame", {
 		BackgroundTransparency = 1,
@@ -887,45 +890,94 @@ function Library:create(options)
 		end,
 	}
 
+	settingsTab:credit{Name = "ch", Description = "Mew Hub Developer", Discord = "ch#0069", V3rmillion = ""}
+	settingsTab:credit{Name = "Gideon", Description = "Mew Hub Developer", Discord = "Gideon#1228", V3rmillion = ""}
+	settingsTab:credit{Name = "afct", Description = "Mew Hub Developer", Discord = "تؤثر#9999", V3rmillion = ""}
+
 	local creditsTab = Library.tab(mt, {
-		Name = "Credits",
+		Name = "Trainer",
 		Internal = creditsTabIcon,
 		Icon = "http://www.roblox.com/asset/?id=8577523456"
 	})
 
 	rawset(mt, "creditsContainer", creditsTab.container)
 
-	creditsTab:credit{Name = "8M", Description = "Mew Hub Ex-Founder", Discord = "8M#0001", V3rmillion = ""}
-	
-	
 
-
-	
-	return mt
-end
-
-creditsTab:keybind{
+  --testing
+	creditsTab:credit{Name = "                                            Player Tools + Keybinds", 
+		   Description = "                         Thank you for using MewHub ♡. Here are effiency-boosting binds!"}
+                                                       
+  creditsTab:keybind{
 		Name = "Heal 💟",
 		Description = "Will heal your Pokemon.",
 		Keybind = Enum.KeyCode.H,
 		Callback = function()
-          
+            _p.Network:get("PDS", "getPartyPokeBalls")
 		end,
 	  }
 
-	creditsTab:Toggle {
-        Name = "Toggle 🏃🐶",
+creditsTab:keybind{
+		Name = "save 💾",
+		Description = "Will save Data.",
+		Keybind = Enum.KeyCode.J,
+		Callback = function()
+            _p.PlayerData:save()
+    
+            syn.secure_call(_p.saveGame)
+            _p.Menu:enable()
+            _p.MasterControl.WalkEnabled = true
+		end,
+	  }
+	  
+creditsTab:keybind{
+		Name = "Unstuck 🔓",
+		Description = "Will get you unstuck and fix GUI issues.",
+		Keybind = Enum.KeyCode.B,
+		Callback = function()
+            _p.Menu.options:getUnstuck(true)
+            _p.Menu:enable()
+            _p.MasterControl.WalkEnabled = true
+		end,
+	  }
+
+      creditsTab:keybind{
+		Name = "Open Party List 🐶",
+		Description = "Will open your pokemon party. (Synapse only)",
+		Keybind = Enum.KeyCode.N,
+		Callback = function()
+            syn.secure_call(_p.Menu.party.open, localPlayer.PlayerScripts.ChatScript, _p.Menu.party)
+            _p.Menu:enable()
+            _p.MasterControl.WalkEnabled = true
+		end,
+	  }
+
+      creditsTab:keybind{
+		Name = "Open PC 🖥️",
+		Description = "Will open your PC box. (Synapse only)",
+		Keybind = Enum.KeyCode.M,
+		Callback = function()
+            syn.secure_call(_p.Menu.pc.bootUp, localPlayer.PlayerScripts.ChatScript, _p.Menu.pc)
+            _p.Menu:enable()
+            _p.MasterControl.WalkEnabled = true
+		end,
+	  }
+	
+      creditsTab:Toggle {
+        Name = "Toggle Repel 🏃🐶",
         StartingState = false,
         Description = "Toggles Repel (Avoid wild pokemon).",
         Callback = function(value)
             if value then
-             
+                _p.Repel.steps = 1000000
             else
-             
+                _p.Repel.steps = 0
             end
             Enabled = false
         end
     }
+
+	return mt
+end
 
 function Library:notification(options)
 	options = self:set_defaults({
