@@ -13,7 +13,7 @@ local Library = {
 	Themes = {
 		Ball = {
 			Main = Color3.fromRGB(0, 0, 0),
-			Secondary = Color3.fromRGB(211, 211, 211),
+			Secondary = Color3.fromRGB(200, 200, 200),
 			Tertiary = Color3.fromRGB(255, 255, 255),
 
 			StrongText = Color3.fromHSV(0, 0, 1),		
@@ -896,8 +896,8 @@ function Library:create(options)
 
 
   --testing
-	creditsTab:credit{Name = "                                            Player Tools + Keybinds", 
-		   Description = "                         Thank you for using MewHub ♡. Here are effiency-boosting binds!"}
+	creditsTab:credit{Name = "                                                   Player Tools + Keybinds", 
+		   Description = "                         Thank you for using 8-Ball 🎱. Here are effiency-boosting binds!"}
                                                        
   creditsTab:keybind{
 		Name = "Heal 💟",
