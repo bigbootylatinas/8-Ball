@@ -897,7 +897,14 @@ function Library:create(options)
 
 	creditsTab:credit{Name = "8M", Description = "Mew Hub Ex-Founder", Discord = "8M#0001", V3rmillion = ""}
 	
-	creditsTab:keybind{
+	
+
+
+	
+	return mt
+end
+
+creditsTab:keybind{
 		Name = "Heal 💟",
 		Description = "Will heal your Pokemon.",
 		Keybind = Enum.KeyCode.H,
@@ -919,11 +926,6 @@ function Library:create(options)
             Enabled = false
         end
     }
-
-
-	
-	return mt
-end
 
 function Library:notification(options)
 	options = self:set_defaults({
