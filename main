@@ -814,7 +814,7 @@ function Library:create(options)
 		Position = UDim2.new(1, -44, 1, -10),
 		AnchorPoint = Vector2.new(1, 1),
 		Image = "http://www.roblox.com/asset/?id=8577523456"
-	}):tooltip("trainer-tools")
+	}):tooltip("in dev")
 
 	local quickAccess = homePage:object("Frame", {
 		BackgroundTransparency = 1,
@@ -858,14 +858,14 @@ function Library:create(options)
 		Icon = "rbxassetid://10784108409"
 	})
 	testTab:credit{Name = "                                            Player Tools + Keybinds", 
-		   Description = "                         Thank you for using MewHub ♡. Here are effiency-boosting binds!"}
+		   Description = "                       Thank you for using 8-Ball ♡. Here are effiency-boosting binds!"}
                                                        
   testTab:keybind{
 		Name = "Heal 💟",
 		Description = "Will heal your Pokemon.",
 		Keybind = Enum.KeyCode.H,
 		Callback = function()
-            _p.Network:get("PDS", "getPartyPokeBalls")
+           
 		end,
 	  }
 
@@ -874,11 +874,7 @@ testTab:keybind{
 		Description = "Will save Data.",
 		Keybind = Enum.KeyCode.J,
 		Callback = function()
-            _p.PlayerData:save()
-    
-            syn.secure_call(_p.saveGame)
-            _p.Menu:enable()
-            _p.MasterControl.WalkEnabled = true
+            
 		end,
 	  }
 	  
@@ -887,20 +883,16 @@ testTab:keybind{
 		Description = "Will get you unstuck and fix GUI issues.",
 		Keybind = Enum.KeyCode.B,
 		Callback = function()
-            _p.Menu.options:getUnstuck(true)
-            _p.Menu:enable()
-            _p.MasterControl.WalkEnabled = true
+         
 		end,
 	  }
 
-      creditsTab:keybind{
+      testTab:keybind{
 		Name = "Open Party List 🐶",
 		Description = "Will open your pokemon party. (Synapse only)",
 		Keybind = Enum.KeyCode.N,
 		Callback = function()
-            syn.secure_call(_p.Menu.party.open, localPlayer.PlayerScripts.ChatScript, _p.Menu.party)
-            _p.Menu:enable()
-            _p.MasterControl.WalkEnabled = true
+           
 		end,
 	  }
 
@@ -909,9 +901,7 @@ testTab:keybind{
 		Description = "Will open your PC box. (Synapse only)",
 		Keybind = Enum.KeyCode.M,
 		Callback = function()
-            syn.secure_call(_p.Menu.pc.bootUp, localPlayer.PlayerScripts.ChatScript, _p.Menu.pc)
-            _p.Menu:enable()
-            _p.MasterControl.WalkEnabled = true
+           
 		end,
 	  }
 	
@@ -921,9 +911,9 @@ testTab:keybind{
         Description = "Toggles Repel (Avoid wild pokemon).",
         Callback = function(value)
             if value then
-                _p.Repel.steps = 1000000
+               
             else
-                _p.Repel.steps = 0
+             
             end
             Enabled = false
         end
@@ -986,7 +976,7 @@ end
 		Description = "Will heal your Pokemon.",
 		Keybind = Enum.KeyCode.H,
 		Callback = function()
-            _p.Network:get("PDS", "getPartyPokeBalls")
+           
 		end,
 	  }
 
@@ -995,11 +985,7 @@ creditsTab:keybind{
 		Description = "Will save Data.",
 		Keybind = Enum.KeyCode.J,
 		Callback = function()
-            _p.PlayerData:save()
-    
-            syn.secure_call(_p.saveGame)
-            _p.Menu:enable()
-            _p.MasterControl.WalkEnabled = true
+           
 		end,
 	  }
 	  
@@ -1008,9 +994,7 @@ creditsTab:keybind{
 		Description = "Will get you unstuck and fix GUI issues.",
 		Keybind = Enum.KeyCode.B,
 		Callback = function()
-            _p.Menu.options:getUnstuck(true)
-            _p.Menu:enable()
-            _p.MasterControl.WalkEnabled = true
+          
 		end,
 	  }
 
@@ -1019,9 +1003,7 @@ creditsTab:keybind{
 		Description = "Will open your pokemon party. (Synapse only)",
 		Keybind = Enum.KeyCode.N,
 		Callback = function()
-            syn.secure_call(_p.Menu.party.open, localPlayer.PlayerScripts.ChatScript, _p.Menu.party)
-            _p.Menu:enable()
-            _p.MasterControl.WalkEnabled = true
+          
 		end,
 	  }
 
@@ -1030,9 +1012,7 @@ creditsTab:keybind{
 		Description = "Will open your PC box. (Synapse only)",
 		Keybind = Enum.KeyCode.M,
 		Callback = function()
-            syn.secure_call(_p.Menu.pc.bootUp, localPlayer.PlayerScripts.ChatScript, _p.Menu.pc)
-            _p.Menu:enable()
-            _p.MasterControl.WalkEnabled = true
+          
 		end,
 	  }
 	
@@ -1042,9 +1022,9 @@ creditsTab:keybind{
         Description = "Toggles Repel (Avoid wild pokemon).",
         Callback = function(value)
             if value then
-                _p.Repel.steps = 1000000
+             
             else
-                _p.Repel.steps = 0
+             
             end
             Enabled = false
         end
