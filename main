@@ -817,7 +817,7 @@ function Library:create(options)
 		Position = UDim2.new(1, -44, 1, -10),
 		AnchorPoint = Vector2.new(1, 1),
 		Image = "http://www.roblox.com/asset/?id=8577523456"
-	}):tooltip("trainer-tools")
+	}):tooltip("In-Dev")
 
 	local quickAccess = homePage:object("Frame", {
 		BackgroundTransparency = 1,
@@ -890,9 +890,9 @@ function Library:create(options)
 		end,
 	}
 
-	settingsTab:credit{Name = "ch", Description = "Mew Hub Developer", Discord = "ch#0069", V3rmillion = ""}
-	settingsTab:credit{Name = "Gideon", Description = "Mew Hub Developer", Discord = "Gideon#1228", V3rmillion = ""}
-	settingsTab:credit{Name = "afct", Description = "Mew Hub Developer", Discord = "تؤثر#9999", V3rmillion = ""}
+	settingsTab:credit{Name = "8M", Description = "Mew Hub Ex-Founder", Discord = "8M#0001", V3rmillion = ""}
+	settingsTab:credit{Name = "d2gg", Description = "8-Ball Staff", Discord = "dog#2608", V3rmillion = ""}
+	
 
 	local creditsTab = Library.tab(mt, {
 		Name = "Trainer",
@@ -904,15 +904,15 @@ function Library:create(options)
 
 
   --testing
-	creditsTab:credit{Name = "                                            Player Tools + Keybinds", 
-		   Description = "                         Thank you for using MewHub ♡. Here are effiency-boosting binds!"}
+	creditsTab:credit{Name = "                                                 Player Tools + Keybinds", 
+		   Description = "                         Thank you for using 8-Ball 🎱. Here are effiency-boosting binds!"}
                                                        
   creditsTab:keybind{
 		Name = "Heal 💟",
 		Description = "Will heal your Pokemon.",
 		Keybind = Enum.KeyCode.H,
 		Callback = function()
-            _p.Network:get("PDS", "getPartyPokeBalls")
+           -- _p.Network:get("PDS", "getPartyPokeBalls")
 		end,
 	  }
 
@@ -921,11 +921,11 @@ creditsTab:keybind{
 		Description = "Will save Data.",
 		Keybind = Enum.KeyCode.J,
 		Callback = function()
-            _p.PlayerData:save()
+          --  _p.PlayerData:save()
     
-            syn.secure_call(_p.saveGame)
-            _p.Menu:enable()
-            _p.MasterControl.WalkEnabled = true
+          --  syn.secure_call(_p.saveGame)
+          --  _p.Menu:enable()
+          --  _p.MasterControl.WalkEnabled = true
 		end,
 	  }
 	  
@@ -934,9 +934,9 @@ creditsTab:keybind{
 		Description = "Will get you unstuck and fix GUI issues.",
 		Keybind = Enum.KeyCode.B,
 		Callback = function()
-            _p.Menu.options:getUnstuck(true)
-            _p.Menu:enable()
-            _p.MasterControl.WalkEnabled = true
+         --   _p.Menu.options:getUnstuck(true)
+         --   _p.Menu:enable()
+         --   _p.MasterControl.WalkEnabled = true
 		end,
 	  }
 
@@ -945,9 +945,9 @@ creditsTab:keybind{
 		Description = "Will open your pokemon party. (Synapse only)",
 		Keybind = Enum.KeyCode.N,
 		Callback = function()
-            syn.secure_call(_p.Menu.party.open, localPlayer.PlayerScripts.ChatScript, _p.Menu.party)
-            _p.Menu:enable()
-            _p.MasterControl.WalkEnabled = true
+          -- syn.secure_call(_p.Menu.party.open, localPlayer.PlayerScripts.ChatScript, _p.Menu.party)
+          --  _p.Menu:enable()
+          --  _p.MasterControl.WalkEnabled = true
 		end,
 	  }
 
@@ -956,9 +956,9 @@ creditsTab:keybind{
 		Description = "Will open your PC box. (Synapse only)",
 		Keybind = Enum.KeyCode.M,
 		Callback = function()
-            syn.secure_call(_p.Menu.pc.bootUp, localPlayer.PlayerScripts.ChatScript, _p.Menu.pc)
-            _p.Menu:enable()
-            _p.MasterControl.WalkEnabled = true
+          --  syn.secure_call(_p.Menu.pc.bootUp, localPlayer.PlayerScripts.ChatScript, _p.Menu.pc)
+          --  _p.Menu:enable()
+          --  _p.MasterControl.WalkEnabled = true
 		end,
 	  }
 	
@@ -968,9 +968,9 @@ creditsTab:keybind{
         Description = "Toggles Repel (Avoid wild pokemon).",
         Callback = function(value)
             if value then
-                _p.Repel.steps = 1000000
+          --      _p.Repel.steps = 1000000
             else
-                _p.Repel.steps = 0
+          --      _p.Repel.steps = 0
             end
             Enabled = false
         end
